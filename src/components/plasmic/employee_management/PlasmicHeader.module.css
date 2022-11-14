@@ -1,0 +1,78 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+.navigationBar:global(.__wab_instance) {
+  width: 133.12%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  padding: 16px;
+}
+.link__aAefu {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0px;
+}
+.img___71Pya {
+  object-fit: cover;
+  height: 40px;
+}
+.img___71Pya > picture > img {
+  object-fit: cover;
+}
+.img___71Pya > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.img__bwbgD {
+  object-fit: cover;
+}
+.img__bwbgD > picture > img {
+  object-fit: cover;
+}
+.img__bwbgD > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.img__dDe9 {
+  object-fit: cover;
+}
+.img__dDe9 > picture > img {
+  object-fit: cover;
+}
+.img__dDe9 > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.link__jI9Pb {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+}
+.link__sMeU9 {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+}
+.link__cVopM {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+}

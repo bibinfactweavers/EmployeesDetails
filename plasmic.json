@@ -310,6 +310,19 @@
           "cssFilePath": "plasmic/employee_management/PlasmicEmployees.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "Pt8OwM6Q3A",
+          "name": "Header",
+          "type": "managed",
+          "projectId": "3UyqH456Q9795LJ8TKuZRx",
+          "renderModuleFilePath": "plasmic/employee_management/PlasmicHeader.jsx",
+          "importSpec": {
+            "modulePath": "Header.jsx"
+          },
+          "cssFilePath": "plasmic/employee_management/PlasmicHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [],
