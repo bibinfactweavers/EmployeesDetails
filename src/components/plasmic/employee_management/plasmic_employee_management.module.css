@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Inria+Serif%3Aital%2Cwght%400%2C400%3B0%2C700&display=swap");
 
-.plasmic_default_styles {
+.plasmic_default_styles,
+.plasmic_default_styles:where(.global_dummy_aaAa),
+.plasmic_default_styles:where(.global_dummy_bbbb),
+.plasmic_default_styles:where(.global_dummy_ccccc),
+.plasmic_default_styles:where(.global_dummy_unnamedVariant),
+.plasmic_default_styles:where(.global_unnamedGlobalGroupOfVariants_unnamedVariant) {
   --mixin-iiTUtur6OMJg_font-family: "Inter", sans-serif;
   --mixin-iiTUtur6OMJg_font-size: 16px;
   --mixin-iiTUtur6OMJg_font-weight: 400;

@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -178,7 +178,8 @@
           "name": "TableValue",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -202,7 +203,8 @@
           "name": "GraphqlFetcher",
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
@@ -221,7 +223,8 @@
           "name": "NavigationBar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "3UyqH456Q9795LJ8TKuZRx",
@@ -281,6 +284,32 @@
           "cssFilePath": "plasmic/employee_management/PlasmicContact.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "DA-ZFux7pw",
+          "name": "DashBoard",
+          "type": "managed",
+          "projectId": "3UyqH456Q9795LJ8TKuZRx",
+          "renderModuleFilePath": "plasmic/employee_management/PlasmicDashBoard.jsx",
+          "importSpec": {
+            "modulePath": "DashBoard.jsx"
+          },
+          "cssFilePath": "plasmic/employee_management/PlasmicDashBoard.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "QuyfF-a56y",
+          "name": "Employees",
+          "type": "managed",
+          "projectId": "3UyqH456Q9795LJ8TKuZRx",
+          "renderModuleFilePath": "plasmic/employee_management/PlasmicEmployees.jsx",
+          "importSpec": {
+            "modulePath": "Employees.jsx"
+          },
+          "cssFilePath": "plasmic/employee_management/PlasmicEmployees.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [],
@@ -308,6 +337,18 @@
         "name": "Screen",
         "projectId": "3UyqH456Q9795LJ8TKuZRx",
         "contextFilePath": "plasmic/employee_management/PlasmicGlobalVariant__Screen.jsx"
+      },
+      {
+        "id": "pweOwfR4KY",
+        "name": "Dummy",
+        "projectId": "3UyqH456Q9795LJ8TKuZRx",
+        "contextFilePath": "plasmic/employee_management/PlasmicGlobalVariant__Dummy.jsx"
+      },
+      {
+        "id": "rgbNZdXxlz",
+        "name": "UnnamedGlobalGroupOfVariants",
+        "projectId": "3UyqH456Q9795LJ8TKuZRx",
+        "contextFilePath": "plasmic/employee_management/PlasmicGlobalVariant__UnnamedGlobalGroupOfVariants.jsx"
       }
     ]
   },

@@ -12,24 +12,26 @@ import * as React from "react";
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import { NavigationBar } from "@plasmicpkgs/plasmic-nav"; // plasmic-import: jGx9tiKJoex/codeComponent
-import About from "../../About"; // plasmic-import: Del_ILbcyv/component
+import Component from "../../Component"; // plasmic-import: lxUTBjvCVD/component
 import { DataFetcher } from "@plasmicpkgs/plasmic-query"; // plasmic-import: ae7V86eNoXA/codeComponent
 import { TableWrapper } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: LF24IrAPbeRN/codeComponent
 import { TableColumn } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: qJFaUEuzy9Ae/codeComponent
 import { TableValue } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: aOob39p1-Dlv/codeComponent
-import Component from "../../Component"; // plasmic-import: lxUTBjvCVD/component
+import { useDummy } from "./PlasmicGlobalVariant__Dummy"; // plasmic-import: pweOwfR4KY/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_employee_management.module.css"; // plasmic-import: 3UyqH456Q9795LJ8TKuZRx/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: Yhm7loIpLSI2/css
 
 export const PlasmicHomepage__VariantProps = new Array();
 
-export const PlasmicHomepage__ArgProps = new Array("children");
+export const PlasmicHomepage__ArgProps = new Array();
 
 function PlasmicHomepage__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
@@ -40,6 +42,9 @@ function PlasmicHomepage__RenderFunc(props) {
     ...variants
   };
   const currentUser = p.useCurrentUser?.() || {};
+  const globalVariants = ensureGlobalVariants({
+    dummy: useDummy()
+  });
   return (
     <React.Fragment>
       <div className={projectcss.plasmic_page_wrapper}>
@@ -56,6 +61,106 @@ function PlasmicHomepage__RenderFunc(props) {
             sty.root
           )}
         >
+          <NavigationBar
+            brand={
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__sgUmR
+                )}
+                href={"#"}
+              >
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__hixWx)}
+                  displayHeight={"40px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"158px"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  src={(() => {
+                    try {
+                      return "https://cdn.dribbble.com/users/31864/screenshots/3666062/free_logos_dribbble_ph.jpg";
+                    } catch (e) {
+                      if (e instanceof TypeError) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              </a>
+            }
+            className={classNames("__wab_instance", sty.navigationBar__fbFwO)}
+            closeButton={
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__gH3RQ)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                src={"https://static1.plasmic.app/close.svg"}
+              />
+            }
+            itemsGap={8}
+            menuItems={
+              true ? (
+                <div className={classNames(projectcss.all, sty.freeBox__rd94H)}>
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__erOs5)}
+                    displayHeight={"92px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"85px"}
+                    loading={"lazy"}
+                    src={(() => {
+                      try {
+                        return "https://p.kindpng.com/picc/s/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png";
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gM61
+                    )}
+                  >
+                    {"Logout"}
+                  </div>
+                </div>
+              ) : null
+            }
+            openButton={
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img___1Tv2K)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                src={"https://static1.plasmic.app/menu.svg"}
+              />
+            }
+            responsiveBreakpoint={768}
+          />
+
           <p.Stack
             as={"section"}
             data-plasmic-name={"section"}
@@ -63,289 +168,145 @@ function PlasmicHomepage__RenderFunc(props) {
             hasGap={true}
             className={classNames(projectcss.all, sty.section)}
           >
-            <NavigationBar
-              data-plasmic-name={"navigationBar"}
-              data-plasmic-override={overrides.navigationBar}
-              brand={
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    sty.link__sgUmR
-                  )}
-                  href={"#"}
-                >
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img__hixWx)}
-                    displayHeight={"40px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"none"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    src={"https://static1.plasmic.app/nav-logo-placeholder.svg"}
-                  />
-                </a>
-              }
-              className={classNames("__wab_instance", sty.navigationBar)}
-              closeButton={
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__dzu93)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"none"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  src={"https://static1.plasmic.app/close.svg"}
-                />
-              }
-              itemsGap={8}
-              menuItems={
-                <React.Fragment>
-                  <a
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__n6IzM
-                    )}
-                    href={"/"}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "Home",
-                      value: args.children
-                    })}
-                  </a>
-
-                  <About
-                    data-plasmic-name={"about"}
-                    data-plasmic-override={overrides.about}
-                    className={classNames("__wab_instance", sty.about)}
-                  />
-
-                  <a
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__e3Ahf
-                    )}
-                    href={`/contact`}
-                    target={"_blank"}
-                  >
-                    {"Contact"}
-                  </a>
-                </React.Fragment>
-              }
-              openButton={
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__pqLmm)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"none"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  src={"https://static1.plasmic.app/menu.svg"}
-                />
-              }
-              responsiveBreakpoint={768}
-            />
-
             {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox___4AGrr)}>
-                <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text
-                  )}
-                >
-                  {"Employees Data"}
-                </div>
-              </div>
-            ) : null}
-
-            <DataFetcher
-              data-plasmic-name={"httpApiFetcher"}
-              data-plasmic-override={overrides.httpApiFetcher}
-              className={classNames("__wab_instance", sty.httpApiFetcher)}
-              dataName={"fetchedData"}
-              errorDisplay={
-                <ph.DataCtxReader>
-                  {$ctx => "Error fetching data"}
-                </ph.DataCtxReader>
-              }
-              headers={{
-                "Content-Type": "application/json",
-                Accept: "application/json"
-              }}
-              loadingDisplay={
-                <ph.DataCtxReader>{$ctx => "Loading..."}</ph.DataCtxReader>
-              }
-              method={"GET"}
-              noLayout={false}
-              url={"https://reqres.in/api/users"}
-            >
-              <ph.DataCtxReader>
-                {$ctx => (
-                  <TableWrapper
-                    data-plasmic-name={"antdTable"}
-                    data-plasmic-override={overrides.antdTable}
-                    className={classNames("__wab_instance", sty.antdTable)}
-                    columns={
-                      <React.Fragment>
-                        <TableColumn
-                          className={classNames(
-                            "__wab_instance",
-                            sty.antdTableColumn__mntzY
-                          )}
-                          columnTemplate={
-                            <ph.DataCtxReader>
-                              {$ctx => (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__y97Ax
-                                  )}
-                                >
-                                  <TableValue
-                                    className={classNames(
-                                      "__wab_instance",
-                                      sty.antdTableValue___9I8Bq
-                                    )}
-                                  />
-                                </div>
+              <div className={classNames(projectcss.all, sty.freeBox__dYTri)}>
+                {true ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__n7JP0)}
+                  >
+                    {true ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__pCx1O
+                        )}
+                      >
+                        {true ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__tXiR
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__lTxVj
                               )}
-                            </ph.DataCtxReader>
-                          }
-                          dataIndex={"first_name"}
-                          title={"Name"}
-                        />
-
-                        <TableColumn
-                          className={classNames(
-                            "__wab_instance",
-                            sty.antdTableColumn___12Zdm
-                          )}
-                          columnTemplate={
-                            <ph.DataCtxReader>
-                              {$ctx => (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__kal2O
-                                  )}
-                                >
-                                  <TableValue
-                                    className={classNames(
-                                      "__wab_instance",
-                                      sty.antdTableValue__e8UOi
-                                    )}
-                                  />
-                                </div>
-                              )}
-                            </ph.DataCtxReader>
-                          }
-                          dataIndex={"email"}
-                          title={"Email"}
-                        />
-
-                        <TableColumn
-                          className={classNames(
-                            "__wab_instance",
-                            sty.antdTableColumn___1XYn1
-                          )}
-                          columnTemplate={
-                            <ph.DataCtxReader>
-                              {$ctx => (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__j9Mz
-                                  )}
-                                >
+                            >
+                              <NavigationBar
+                                brand={null}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.navigationBar__xuH5,
+                                  {
+                                    [sty.navigationBarglobal_dummy_ccccc__xuH5EPs8B]:
+                                      hasVariant(
+                                        globalVariants,
+                                        "dummy",
+                                        "ccccc"
+                                      )
+                                  }
+                                )}
+                                closeButton={
                                   <p.PlasmicImg
-                                    data-plasmic-name={"img"}
-                                    data-plasmic-override={overrides.img}
                                     alt={""}
-                                    className={classNames(sty.img)}
+                                    className={classNames(sty.img__axUbF)}
                                     displayHeight={"auto"}
                                     displayMaxHeight={"none"}
-                                    displayMaxWidth={"100px"}
+                                    displayMaxWidth={"none"}
                                     displayMinHeight={"0"}
                                     displayMinWidth={"0"}
                                     displayWidth={"auto"}
-                                    loading={"lazy"}
-                                    src={(() => {
-                                      try {
-                                        return $ctx.currentColumn;
-                                      } catch (e) {
-                                        if (e instanceof TypeError) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
+                                    src={
+                                      "https://static1.plasmic.app/close.svg"
+                                    }
                                   />
-                                </div>
-                              )}
-                            </ph.DataCtxReader>
-                          }
-                          dataIndex={"avatar"}
-                          title={"Avatar"}
-                        />
-                      </React.Fragment>
-                    }
-                    items={(() => {
-                      try {
-                        return $ctx.fetchedData.data;
-                      } catch (e) {
-                        if (e instanceof TypeError) {
-                          return [
-                            {
-                              name: "John Brown",
-                              age: 19,
-                              address: "New York No. 1 Lake Park",
-                              tags: ["student", "developer"]
-                            },
-                            {
-                              name: "Jim Green",
-                              age: 42,
-                              address: "London No. 1 Lake Park",
-                              tags: ["teacher"]
-                            },
-                            {
-                              name: "Joe Black",
-                              age: 32,
-                              address: "Sidney No. 1 Lake Park",
-                              tags: ["cool", "teacher"]
-                            }
-                          ];
-                        }
-                        throw e;
-                      }
-                    })()}
-                    pagination={true}
-                    size={(() => {
-                      try {
-                        return $ctx.fetchedData.total;
-                      } catch (e) {
-                        if (e instanceof TypeError) {
-                          return "large";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  />
-                )}
-              </ph.DataCtxReader>
-            </DataFetcher>
+                                }
+                                itemsGap={8}
+                                menuItems={
+                                  <React.Fragment>
+                                    <a
+                                      data-plasmic-name={"dashboard"}
+                                      data-plasmic-override={
+                                        overrides.dashboard
+                                      }
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.a,
+                                        projectcss.__wab_text,
+                                        sty.dashboard,
+                                        {
+                                          [sty.dashboardglobal_dummy_ccccc]:
+                                            hasVariant(
+                                              globalVariants,
+                                              "dummy",
+                                              "ccccc"
+                                            )
+                                        }
+                                      )}
+                                      href={`/`}
+                                    >
+                                      {"DashBoarrd"}
+                                    </a>
+
+                                    <a
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.a,
+                                        projectcss.__wab_text,
+                                        sty.link__n5Cmt,
+                                        {
+                                          [sty.linkglobal_dummy_ccccc__n5CmtEPs8B]:
+                                            hasVariant(
+                                              globalVariants,
+                                              "dummy",
+                                              "ccccc"
+                                            )
+                                        }
+                                      )}
+                                      href={"/"}
+                                    >
+                                      {"Empoyees"}
+                                    </a>
+
+                                    <a
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.a,
+                                        projectcss.__wab_text,
+                                        sty.link___9Db7F
+                                      )}
+                                      href={"/"}
+                                    >
+                                      {"Contact"}
+                                    </a>
+                                  </React.Fragment>
+                                }
+                                openButton={
+                                  <p.PlasmicImg
+                                    alt={""}
+                                    className={classNames(sty.img__au7T7)}
+                                    displayHeight={"auto"}
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"none"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={"auto"}
+                                    src={"https://static1.plasmic.app/menu.svg"}
+                                  />
+                                }
+                                responsiveBreakpoint={768}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
           </p.Stack>
 
           <Component
@@ -353,6 +314,205 @@ function PlasmicHomepage__RenderFunc(props) {
             data-plasmic-override={overrides.component}
             className={classNames("__wab_instance", sty.component)}
           />
+
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__o26Mj)}>
+              {true ? (
+                <div className={classNames(projectcss.all, sty.freeBox__kOhE)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___1Rk1I
+                    )}
+                  >
+                    {"Employees"}
+                  </div>
+
+                  <DataFetcher
+                    data-plasmic-name={"httpApiFetcher"}
+                    data-plasmic-override={overrides.httpApiFetcher}
+                    className={classNames("__wab_instance", sty.httpApiFetcher)}
+                    dataName={"fetchedData"}
+                    errorDisplay={
+                      <ph.DataCtxReader>
+                        {$ctx => "Error fetching data"}
+                      </ph.DataCtxReader>
+                    }
+                    headers={{
+                      "Content-Type": "application/json",
+                      Accept: "application/json"
+                    }}
+                    loadingDisplay={
+                      <ph.DataCtxReader>
+                        {$ctx => "Loading..."}
+                      </ph.DataCtxReader>
+                    }
+                    method={"GET"}
+                    noLayout={false}
+                    url={"https://reqres.in/api/users"}
+                  >
+                    <ph.DataCtxReader>
+                      {$ctx => (
+                        <TableWrapper
+                          data-plasmic-name={"antdTable"}
+                          data-plasmic-override={overrides.antdTable}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.antdTable
+                          )}
+                          columns={
+                            <React.Fragment>
+                              <TableColumn
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.antdTableColumn__mntzY
+                                )}
+                                columnTemplate={
+                                  <ph.DataCtxReader>
+                                    {$ctx => (
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__l4Dcy
+                                        )}
+                                      >
+                                        <TableValue
+                                          className={classNames(
+                                            "__wab_instance",
+                                            sty.antdTableValue__frXNj
+                                          )}
+                                        />
+                                      </div>
+                                    )}
+                                  </ph.DataCtxReader>
+                                }
+                                dataIndex={"first_name"}
+                                title={"Name"}
+                              />
+
+                              <TableColumn
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.antdTableColumn___12Zdm
+                                )}
+                                columnTemplate={
+                                  <ph.DataCtxReader>
+                                    {$ctx => (
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__jrPtc
+                                        )}
+                                      >
+                                        <TableValue
+                                          className={classNames(
+                                            "__wab_instance",
+                                            sty.antdTableValue__nduK
+                                          )}
+                                        />
+                                      </div>
+                                    )}
+                                  </ph.DataCtxReader>
+                                }
+                                dataIndex={"email"}
+                                title={"Email"}
+                              />
+
+                              <TableColumn
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.antdTableColumn___1XYn1
+                                )}
+                                columnTemplate={
+                                  <ph.DataCtxReader>
+                                    {$ctx => (
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__j9Mz
+                                        )}
+                                      >
+                                        <p.PlasmicImg
+                                          alt={""}
+                                          className={classNames(
+                                            sty.img___4N2Vc
+                                          )}
+                                          displayHeight={"auto"}
+                                          displayMaxHeight={"none"}
+                                          displayMaxWidth={"100px"}
+                                          displayMinHeight={"0"}
+                                          displayMinWidth={"0"}
+                                          displayWidth={"auto"}
+                                          loading={"lazy"}
+                                          src={(() => {
+                                            try {
+                                              return $ctx.currentColumn;
+                                            } catch (e) {
+                                              if (e instanceof TypeError) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()}
+                                        />
+                                      </div>
+                                    )}
+                                  </ph.DataCtxReader>
+                                }
+                                dataIndex={"avatar"}
+                                title={"Avatar"}
+                              />
+                            </React.Fragment>
+                          }
+                          items={(() => {
+                            try {
+                              return $ctx.fetchedData.data;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return [
+                                  {
+                                    name: "John Brown",
+                                    age: 19,
+                                    address: "New York No. 1 Lake Park",
+                                    tags: ["student", "developer"]
+                                  },
+                                  {
+                                    name: "Jim Green",
+                                    age: 42,
+                                    address: "London No. 1 Lake Park",
+                                    tags: ["teacher"]
+                                  },
+                                  {
+                                    name: "Joe Black",
+                                    age: 32,
+                                    address: "Sidney No. 1 Lake Park",
+                                    tags: ["cool", "teacher"]
+                                  }
+                                ];
+                              }
+                              throw e;
+                            }
+                          })()}
+                          pagination={true}
+                          size={(() => {
+                            try {
+                              return $ctx.fetchedData.total;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return "large";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      )}
+                    </ph.DataCtxReader>
+                  </DataFetcher>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -363,32 +523,17 @@ const PlasmicDescendants = {
   root: [
     "root",
     "section",
-    "navigationBar",
-    "about",
-    "text",
+    "dashboard",
+    "component",
     "httpApiFetcher",
-    "antdTable",
-    "img",
-    "component"
+    "antdTable"
   ],
 
-  section: [
-    "section",
-    "navigationBar",
-    "about",
-    "text",
-    "httpApiFetcher",
-    "antdTable",
-    "img"
-  ],
-
-  navigationBar: ["navigationBar", "about"],
-  about: ["about"],
-  text: ["text"],
-  httpApiFetcher: ["httpApiFetcher", "antdTable", "img"],
-  antdTable: ["antdTable", "img"],
-  img: ["img"],
-  component: ["component"]
+  section: ["section", "dashboard"],
+  dashboard: ["dashboard"],
+  component: ["component"],
+  httpApiFetcher: ["httpApiFetcher", "antdTable"],
+  antdTable: ["antdTable"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -425,13 +570,10 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
-    navigationBar: makeNodeComponent("navigationBar"),
-    about: makeNodeComponent("about"),
-    text: makeNodeComponent("text"),
+    dashboard: makeNodeComponent("dashboard"),
+    component: makeNodeComponent("component"),
     httpApiFetcher: makeNodeComponent("httpApiFetcher"),
     antdTable: makeNodeComponent("antdTable"),
-    img: makeNodeComponent("img"),
-    component: makeNodeComponent("component"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps,
